@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openCV Document</title>
+</head>
+<body>
+    cv2.imread('filename')
+    cv2.imwrite('filename',imgdata)
+    cv2.nameWindow('windowname', cv2.WINDOW_NORMAL) //自由調整照片大小
+    cv2.imshow('windowname',imgdata)
+    cv2.cvtColor('imgdata',cv2.COLOR_BGR2GRAY/cv2.COLOR_BGR2HSV)
+
+    var = cv2.applyColorMap(imgdata,cv2.COLORMAP_JET) COLORMAP種類請看image_input/COLORMAP.jpg
+
+    cv2.putText('imgdata','text',(positionx,positiony),font,big,(textcolor255,255,255),line-type)
+    cv2.Canny('imgdata',minium_value,maxium_value)
+
+    cv2.findContours(imgdata,mode種類,method近似方法,offset)
+    #黑色表示背景，白色表示輪廓，所以必須用黑白圖
+    #mode種類:
+        RETR_EXTERNAL:檢索外部輪廓
+        RETR_LIST:檢索所有輪廓且不建立層次結構
+        RETR_TREE:檢索所有輪廓且建立完整層次結構
+    #method輪廓近似方法:
+        cv2.CHAIN_APPROX_NONE:存處所有輪廓點    
+        cv2.CHAIN_APPROX_SIMPE:壓縮水平、垂直、對角輪廓線，只留端點    
+    #offset:
+        #輪廓點偏移量，格視為tuple()，ex:(-10,10)為沿X負方向偏移10像素點,Y正方向偏移10
+    返回值: contours輪廓點、hierarchy輪廓間層次關系
+</body>
+</html>
