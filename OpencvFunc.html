@@ -15,7 +15,7 @@
 
     var = cv2.applyColorMap(imgdata,cv2.COLORMAP_JET) COLORMAP種類請看image_input/COLORMAP.jpg
 
-    cv2.putText('imgdata','text',(positionx,positiony),font,big,(textcolor255,255,255),line-type)
+    cv2.putText('imgdata','text',(positionx,positiony),font,big,(textcolor255,255,255),line-type粗度)
     cv2.Canny('imgdata',minium_value,maxium_value)
 
     cv2.findContours(imgdata,mode種類,method近似方法,offset)
@@ -30,5 +30,12 @@
     #offset:
         #輪廓點偏移量，格視為tuple()，ex:(-10,10)為沿X負方向偏移10像素點,Y正方向偏移10
     返回值: contours輪廓點、hierarchy輪廓間層次關系
+
+    cv2.contourArea(輪廓) #計算面積
+    cv2.arcLength(輪廓,閉合ornot(bool))
+    
+    cv2.approxPolyDP (param1,param2,param3)
+    #p1:輪廓 #p2:輪廓近似值 #p3:輪廓是否閉合(bool)
+
 </body>
 </html>
